@@ -71,7 +71,7 @@ main {
   width: 100vw;
   height: calc(100vh - 100px - 70px);
   background-image: url('../imagens/background.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center center;
   display: flex;
   flex-direction: column;
@@ -135,7 +135,6 @@ main h1 {
   align-items: center;
   gap: 1rem;
   padding: 5px;
-  width: 80%;
 }
 
 .conteudo::-webkit-scrollbar {
@@ -156,7 +155,7 @@ main h1 {
 
 .item {
   background-color: white;
-  width: 100%;
+  width: 750px;
   height: 70px;
   border-radius: 40px;
   padding: 0 6rem;
@@ -202,4 +201,15 @@ footer {
 
 footer img {
   height: 75px;
+}
+
+
+
+/*LINK de redirecionamento*/
+.redirect{ 
+  color:var(--laranja);
+  transition: 300ms;
+}
+.redirect:hover{ 
+  color:var(--laranjaHover);
 }
