@@ -202,3 +202,14 @@ footer {
 footer img {
   height: 75px;
 }
+
+
+
+/*LINK de redirecionamento*/
+.redirect{ 
+  color:var(--laranja);
+  transition: 300ms;
+}
+.redirect:hover{ 
+  color:var(--laranjaHover);
+}

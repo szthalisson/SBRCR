@@ -14,7 +14,7 @@
 		</a>
 		<h3>Sistema Bibliotecário da <span class="titulo-laranja">EEEP Raimundo Célio Rodrigues</span></h3>
 		<nav>
-			<a class="btn-laranja" href="emprestimos.html">Empréstimos</a>
+			<a class="btn-laranja" href="emprestimos.php">Empréstimos</a>
 		</nav>
 	</header>
 	<main>
@@ -34,12 +34,12 @@
                         if(isset($_POST['pesquisa'])){
                             $pQ = $_POST['pesquisa'];
                                 if($pQ == ""){
-                                    $sqlListar = mysqli_query($con, "select nome_l, autor, quant from livro");
+                                    $sqlListar = mysqli_query($con, "select id_livro, nome_l, autor, quant from livro");
                                 }else{
-                                    $sqlListar = mysqli_query($con, "select nome_l, autor, quant from livro where nome_l like '%$pQ%' or id_livro='$pQ' or autor like '%$pQ%'");
+                                    $sqlListar = mysqli_query($con, "select id_livro, nome_l, autor, quant from livro where nome_l like '%$pQ%' or autor like '%$pQ%'");
                                 }
                         }else{
-                            $sqlListar = mysqli_query($con, "select nome_l, autor, quant from livro");
+                            $sqlListar = mysqli_query($con, "select id_livro, nome_l, autor, quant from livro");
                         }
 
                         if(mysqli_num_rows($sqlListar) > 0){
@@ -66,6 +66,14 @@
 
                             ";
                         }
+                    }else{
+                        echo "
+                                <div class='item'>
+                                    <div class='info'> 
+                                        <span>Não encontramos nada... <a href='#' class='redirect'>Adicionar um novo.</a></span>
+                                    </div>
+                                </div>
+                        ";
                     }
                     ?>
 		</div>
